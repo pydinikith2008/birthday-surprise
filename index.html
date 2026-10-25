@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1b1a45">
+  <title>Our Little Universe 💛</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div class="sky" aria-hidden="true">
+    <div class="moon">🌙</div>
+    <div class="moon-glow"></div>
+    <div id="stars"></div>
+    <div id="floating-hearts"></div>
+    <div id="magic-particles"></div>
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Our Little Universe home">♡ our little universe</a>
+
+    <button id="music-toggle" class="music-button" type="button" aria-pressed="false">
+      <span id="music-icon">♫</span>
+      <span id="music-label">Play our music</span>
+    </button>
+  </header>
+
+  <!-- romantic scene-change heart + unlock light -->
+  <div id="scene-transition" aria-hidden="true">
+    <div class="rt-veil"></div>
+    <div class="rt-core">♥</div>
+    <div class="rt-sparkles"></div>
+  </div>
+  <div id="unlock-flash" aria-hidden="true"></div>
+
+  <audio id="background-music" src="music.mp3 - Copy.mpeg" loop preload="none"></audio>
+
+  <main>
+    <!-- SCENE 0: WINTER WELCOME + PASSWORD -->
+    <section id="gate-scene" class="scene active">
+      <div class="gate-bg" aria-hidden="true">
+        <div class="gate-aurora"></div>
+        <div class="gate-glow"></div>
+        <div class="gate-moon"></div>
+        <div id="gate-stars"></div>
+        <div id="gate-bokeh"></div>
+        <div id="gate-snow"></div>
+        <div class="gate-door"><span></span></div>
+
+        <!-- cosy snowy scenery: hills, little trees, two cute snowmen -->
+        <div class="gate-scenery">
+          <svg class="gate-hills" viewBox="0 0 400 140" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="hillBack" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#f6d9ee"/><stop offset="1" stop-color="#cdb7ec"/>
+              </linearGradient>
+              <linearGradient id="hillFront" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#ffe3f0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0 62 Q60 24 130 56 T260 48 T400 54 L400 140 L0 140Z" fill="url(#hillBack)" opacity=".92"/>
+            <path d="M0 96 Q80 62 160 90 T320 82 T400 90 L400 140 L0 140Z" fill="url(#hillFront)"/>
+          </svg>
+
+          <svg class="gate-tree tree-a" viewBox="0 0 40 64">
+            <rect x="18" y="52" width="5" height="10" rx="2" fill="#7a5a86"/>
+            <polygon points="20,4 36,30 4,30" fill="#5b4b9a"/>
+            <polygon points="20,18 39,46 1,46" fill="#6a58ad"/>
+            <path d="M20 4 L27 15 Q20 13 13 15Z" fill="#fff"/>
+            <path d="M20 18 L30 32 Q20 29 10 32Z" fill="#fff"/>
+          </svg>
+          <svg class="gate-tree tree-b" viewBox="0 0 40 64">
+            <rect x="18" y="52" width="5" height="10" rx="2" fill="#7a5a86"/>
+            <polygon points="20,4 36,30 4,30" fill="#6a58ad"/>
+            <polygon points="20,18 39,46 1,46" fill="#7a66c0"/>
+            <path d="M20 4 L27 15 Q20 13 13 15Z" fill="#fff"/>
+            <path d="M20 18 L30 32 Q20 29 10 32Z" fill="#fff"/>
+          </svg>
+
+          <!-- cute snowman with a top hat -->
+          <svg class="snowman sm-left" viewBox="0 0 130 170">
+            <defs>
+              <radialGradient id="snowShade" cx="38%" cy="32%" r="78%">
+                <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d6e3ff"/>
+              </radialGradient>
+            </defs>
+            <ellipse cx="65" cy="165" rx="48" ry="5" fill="#9a8fcf" opacity=".4"/>
+            <path d="M30 114 L6 96 M16 104 L6 110" stroke="#7a4a2b" stroke-width="4" stroke-linecap="round" fill="none"/>
+            <path d="M100 114 L124 94 M114 102 L124 108" stroke="#7a4a2b" stroke-width="4" stroke-linecap="round" fill="none"/>
+            <circle cx="65" cy="126" r="38" fill="url(#snowShade)"/>
+            <circle cx="65" cy="62" r="29" fill="url(#snowShade)"/>
+            <ellipse cx="65" cy="38" rx="29" ry="6" fill="#2b2457"/>
+            <rect x="47" y="12" width="36" height="26" rx="5" fill="#2b2457"/>
+            <rect x="47" y="28" width="36" height="7" fill="#ff7fb0"/>
+            <circle cx="55" cy="58" r="3.4" fill="#2b2457"/><circle cx="75" cy="58" r="3.4" fill="#2b2457"/>
+            <circle cx="56" cy="57" r="1.1" fill="#fff"/><circle cx="76" cy="57" r="1.1" fill="#fff"/>
+            <path d="M65 64 L87 68 L65 72Z" fill="#ff9b3d"/>
+            <ellipse cx="45" cy="69" rx="6.5" ry="4.2" fill="#ff9ec4" opacity=".7"/>
+            <ellipse cx="85" cy="69" rx="6.5" ry="4.2" fill="#ff9ec4" opacity=".7"/>
+            <path d="M56 75 Q65 83 74 75" stroke="#2b2457" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+            <path d="M37 93 Q65 106 93 93 L93 103 Q65 116 37 103Z" fill="#ff6f9f"/>
+            <rect x="75" y="100" width="14" height="32" rx="6" fill="#ff6f9f"/>
+            <rect x="75" y="110" width="14" height="5" fill="#ffd1e1"/>
+            <circle cx="62" cy="122" r="3.3" fill="#2b2457"/><circle cx="62" cy="137" r="3.3" fill="#2b2457"/><circle cx="62" cy="151" r="3.3" fill="#2b2457"/>
+          </svg>
+
+          <div class="gate-lovelet">♥</div>
+
+          <!-- cute snowgirl with a pompom beanie -->
+          <svg class="snowman sm-right" viewBox="0 0 130 170">
+            <ellipse cx="65" cy="165" rx="48" ry="5" fill="#9a8fcf" opacity=".4"/>
+            <path d="M30 114 L6 94 M16 102 L6 108" stroke="#7a4a2b" stroke-width="4" stroke-linecap="round" fill="none"/>
+            <path d="M100 114 L124 96 M114 104 L124 110" stroke="#7a4a2b" stroke-width="4" stroke-linecap="round" fill="none"/>
+            <circle cx="65" cy="126" r="38" fill="url(#snowShade)"/>
+            <circle cx="65" cy="62" r="29" fill="url(#snowShade)"/>
+            <path d="M36 48 C36 14 94 14 94 48Z" fill="#ff8fbd"/>
+            <rect x="34" y="42" width="62" height="11" rx="5.5" fill="#fff"/>
+            <circle cx="65" cy="16" r="8" fill="#fff"/>
+            <circle cx="55" cy="62" r="3.4" fill="#2b2457"/><circle cx="75" cy="62" r="3.4" fill="#2b2457"/>
+            <circle cx="56" cy="61" r="1.1" fill="#fff"/><circle cx="76" cy="61" r="1.1" fill="#fff"/>
+            <path d="M50 57 L47 54 M54 55 L53 51 M80 57 L83 54 M76 55 L77 51" stroke="#2b2457" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M65 67 L85 71 L65 75Z" fill="#ff9b3d"/>
+            <ellipse cx="45" cy="72" rx="6.5" ry="4.2" fill="#ff9ec4" opacity=".75"/>
+            <ellipse cx="85" cy="72" rx="6.5" ry="4.2" fill="#ff9ec4" opacity=".75"/>
+            <path d="M57 78 Q65 85 73 78" stroke="#2b2457" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+            <path d="M37 93 Q65 106 93 93 L93 103 Q65 116 37 103Z" fill="#fff1c9"/>
+            <rect x="41" y="100" width="14" height="30" rx="6" fill="#fff1c9"/>
+            <rect x="41" y="110" width="14" height="5" fill="#ff9ec4"/>
+            <path d="M65 146 C45 134 52 118 65 128 C78 118 85 134 65 146Z" fill="#ff6f9f"/>
+          </svg>
+        </div>
+
+        <div id="gate-hearts"></div>
+      </div>
+
+      <div class="gate-content">
+        <div class="gate-psst gate-birthday">
+          <p class="bd-psst">Psst… someone made a little universe just for you ♡</p>
+          <h2 class="bd-script bd-date">It's 26 October…</h2>
+          <p class="bd-sub">it's your birthday</p>
+          <h2 class="bd-script bd-happy">Happy Birthday,</h2>
+          <div class="bd-namewrap">
+            <h2 class="bd-name">Kiddo</h2>
+            <span class="bd-sparkle" aria-hidden="true">✨</span>
+          </div>
+
+          <div class="bd-heart" aria-hidden="true">
+            <span class="bd-ring"></span>
+            <span class="bd-ring r2"></span>
+            <svg viewBox="0 0 100 92">
+              <defs>
+                <linearGradient id="bdHeartG" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#ffc2dc"/>
+                  <stop offset="1" stop-color="#ff4f9d"/>
+                </linearGradient>
+              </defs>
+              <path d="M50 88 C14 60 2 38 14 20 C26 5 44 12 50 26 C56 12 74 5 86 20 C98 38 86 60 50 88 Z"
+                    fill="url(#bdHeartG)" stroke="#fff" stroke-width="3.5" stroke-linejoin="round"/>
+            </svg>
+            <i class="bd-mini" style="--x:-30%;--s:14px;--dl:8.4s;--dx:-18px">♥</i>
+            <i class="bd-mini" style="--x:10%;--s:11px;--dl:9.6s;--dx:10px">♡</i>
+            <i class="bd-mini" style="--x:55%;--s:16px;--dl:10.2s;--dx:22px">♥</i>
+            <i class="bd-mini" style="--x:95%;--s:12px;--dl:9s;--dx:-8px">♡</i>
+            <i class="bd-mini" style="--x:125%;--s:15px;--dl:11s;--dx:16px">♥</i>
+            <i class="bd-mini" style="--x:70%;--s:10px;--dl:12s;--dx:-20px">♡</i>
+          </div>
+        </div>
+
+        <form id="gate-form" class="gate-card" autocomplete="off">
+          <p class="gate-title">Unlock your little winter wonderland</p>
+          <p class="gate-label">Tap the secret code</p>
+
+          <div class="gate-dots" id="gate-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          <input id="gate-input" class="gate-input" type="password" inputmode="none" readonly tabindex="-1" aria-label="Secret code">
+
+          <div class="keypad">
+            <button type="button" class="key" data-key="1">1</button>
+            <button type="button" class="key" data-key="2">2</button>
+            <button type="button" class="key" data-key="3">3</button>
+            <button type="button" class="key" data-key="4">4</button>
+            <button type="button" class="key" data-key="5">5</button>
+            <button type="button" class="key" data-key="6">6</button>
+            <button type="button" class="key" data-key="7">7</button>
+            <button type="button" class="key" data-key="8">8</button>
+            <button type="button" class="key" data-key="9">9</button>
+            <button type="button" class="key key-fn" data-key="back" aria-label="Delete">⌫</button>
+            <button type="button" class="key" data-key="0">0</button>
+            <button type="submit" class="key key-fn key-go" aria-label="Unlock">♡</button>
+          </div>
+
+          <p id="gate-error" class="gate-error" role="alert"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- SCENE 1: INTRO -->
+    <section id="intro" class="scene" hidden>
+      <div class="intro-content">
+        <p class="eyebrow">A LITTLE UNIVERSE MADE FOR YOU</p>
+        <p class="moon-caption">under the same golden moon</p>
+
+        <h1>Somewhere in the stars,<br><span>it's always you.</span></h1>
+
+        <p class="intro-copy">
+          A tiny world of memories, wishes, and all the little things
+          that make you special.
+        </p>
+
+        <button id="begin-btn" class="primary-button" type="button">
+          Enter our little world <span>♡</span>
+        </button>
+
+        <p class="soft-note">made with a little magic and a lot of love</p>
+      </div>
+      <div class="scroll-hint" aria-hidden="true">✧</div>
+    </section>
+
+    <!-- SCENE 2: LETTER -->
+    <section id="letter-scene" class="scene" hidden>
+      <div class="section-heading">
+        <p class="eyebrow">A LETTER FROM MY HEART</p>
+        <h2>For you, <span>my favourite person</span></h2>
+        <p class="section-subtitle">A little magic is waiting inside.</p>
+      </div>
+
+      <div class="letter-stage">
+        <div class="letter-aura"></div>
+
+        <article id="letter-paper" class="letter-paper">
+          <div class="paper-decoration">✧ &nbsp; ♡ &nbsp; ✧</div>
+          <p class="letter-date">A little note, just for you</p>
+          <h3>My sweetest love,</h3>
+
+          <p id="typed-message" class="typed-message"></p><span id="typing-cursor" class="typing-cursor" aria-hidden="true"></span>
+
+          <p class="letter-signature">With all my heart, <span>♡</span></p>
+          <div class="paper-bottom">forever a little piece of my universe ✧</div>
+        </article>
+
+        <div id="envelope" class="envelope" aria-label="A sealed love letter">
+          <div class="envelope-back"></div>
+          <div class="envelope-letter-hint"></div>
+          <div class="envelope-left"></div>
+          <div class="envelope-right"></div>
+          <div class="envelope-flap"></div>
+          <div class="wax-seal">♡</div>
+        </div>
+      </div>
+
+      <div class="letter-controls">
+        <button id="open-letter-btn" class="primary-button" type="button">
+          Open your letter <span>✧</span>
+        </button>
+        <button id="continue-letter-btn" class="primary-button" type="button" hidden>
+          Keep our story going <span>♡</span>
+        </button>
+      </div>
+    </section>
+
+    
+       <!-- SCENE 3: SCRAPBOOK -->
+<section id="scrapbook-scene" class="scene" hidden>
+  <div class="scrapbook">
+
+        <div class="photo-grid">
+          <!-- MEMORY 1 -->
+          <button class="memory-card mc-one" type="button" aria-pressed="false" aria-label="Open the first love note" style="--d:.1s; --tilt:-2deg">
+            <span class="mc-inner">
+              <span class="mc-face mc-front">
+                <span class="mc-tape"></span>
+                <span class="mc-doodle d1">✦</span><span class="mc-doodle d2">♡</span><span class="mc-doodle d3">✧</span>
+                <span class="mc-seal">♥</span>
+                <span class="mc-note-title">Open me first ♡</span>
+                <span class="mc-note-text">a little memory is waiting for you</span>
+                <span class="mc-hint">tap to open</span>
+              </span>
+              <span class="mc-face mc-back">
+                <span class="mc-tape"></span>
+                <span class="mc-photo">
+                  <img src="photo3.jpeg" alt="Our first memory">
+                  <span class="mc-missing">♡<small>photo3.jpeg</small></span>
+                </span>
+                <span class="mc-caption">a moment to keep</span>
+              </span>
+            </span>
+            <span class="mc-burst" aria-hidden="true"></span>
+          </button>
+
+          <!-- MEMORY 2 -->
+          <button class="memory-card mc-two" type="button" aria-pressed="false" aria-label="Open the second love note" style="--d:.3s; --tilt:1.5deg">
+            <span class="mc-inner">
+              <span class="mc-face mc-front">
+                <span class="mc-tape"></span>
+                <span class="mc-doodle d1">✧</span><span class="mc-doodle d2">♡</span><span class="mc-doodle d3">✦</span>
+                <span class="mc-seal">♥</span>
+                <span class="mc-note-title">Now open me…</span>
+                <span class="mc-note-text">something that makes me smile</span>
+                <span class="mc-hint">tap to open</span>
+              </span>
+              <span class="mc-face mc-back">
+                <span class="mc-tape"></span>
+                <span class="mc-photo">
+                  <img src="photo2.jpeg" alt="Our second memory">
+                  <span class="mc-missing">♡<small>photo2.jpeg</small></span>
+                </span>
+                <span class="mc-caption">the happy little things</span>
+              </span>
+            </span>
+            <span class="mc-burst" aria-hidden="true"></span>
+          </button>
+
+          <!-- MEMORY 3 -->
+          <button class="memory-card mc-three" type="button" aria-pressed="false" aria-label="Open the third love note" style="--d:.5s; --tilt:-1deg">
+            <span class="mc-inner">
+              <span class="mc-face mc-front">
+                <span class="mc-tape"></span>
+                <span class="mc-doodle d1">✦</span><span class="mc-doodle d2">♡</span><span class="mc-doodle d3">✧</span>
+                <span class="mc-seal">♥</span>
+                <span class="mc-note-title">Last one, my love</span>
+                <span class="mc-note-text">my favourite view is you</span>
+                <span class="mc-hint">tap to open</span>
+              </span>
+              <span class="mc-face mc-back">
+                <span class="mc-tape"></span>
+                <span class="mc-photo">
+                  <img src="photo1.jpeg" alt="Our third memory">
+                  <span class="mc-missing">♡<small>photo1.jpeg</small></span>
+                </span>
+                <span class="mc-caption">you, always you</span>
+              </span>
+            </span>
+            <span class="mc-burst" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <p class="section-subtitle">Every little memory holds a piece of my heart… and every piece leads to you. ♡</p>
+      </div>
+
+      <div class="scene-actions">
+        <button id="to-timeline-btn" class="primary-button" type="button">
+          Turn the page <span>→</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- SCENE 4: TIMELINE -->
+    <section id="timeline-scene" class="scene" hidden>
+      <div class="section-heading">
+        <p class="eyebrow">EVERY LITTLE CHAPTER MATTERS</p>
+        <h2>A story written <span>one moment at a time</span></h2>
+        <p class="section-subtitle">Six memories, one beautiful story. ♡</p>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <span class="timeline-heart">✨</span>
+          <div class="timeline-card">
+            <p class="timeline-kicker">WHERE IT ALL BEGAN</p>
+            <input class="timeline-date" aria-label="First memory date" value="19 SEPTEMBER">
+            <input class="timeline-title" aria-label="First memory title" value="The first time I saw you">
+            <textarea aria-label="First memory description" rows="3">I didn't know then how special you would become to me. It was the beginning of a story I never knew I would treasure so much. 💗</textarea>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <span class="timeline-heart">♡</span>
+          <div class="timeline-card">
+            <p class="timeline-kicker">A FRIENDSHIP BEGINS</p>
+            <input class="timeline-date" aria-label="Friendship date" value="AFTER 19 SEPTEMBER">
+            <input class="timeline-title" aria-label="Friendship title" value="From strangers to friends">
+            <textarea aria-label="Friendship description" rows="3">After that first time I saw you, we became friends. Little by little, you became someone special to me. 💗</textarea>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <span class="timeline-heart">🚌</span>
+          <div class="timeline-card">
+            <p class="timeline-kicker">A MOMENT TO REMEMBER</p>
+            <input class="timeline-date" aria-label="Bus journey date" value="04 APRIL 2026">
+            <input class="timeline-title" aria-label="Bus journey title" value="A bus journey to remember">
+            <textarea aria-label="Bus journey description" rows="3">On that bus journey, while holding your hand, I found the courage to tell you how I felt. I'll always keep that memory close to my heart. 💗</textarea>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <span class="timeline-heart">💌</span>
+          <div class="timeline-card">
+            <p class="timeline-kicker">THE QUESTION</p>
+            <input class="timeline-date" aria-label="Proposal date" value="04 APRIL 2026">
+            <input class="timeline-title" aria-label="Proposal title" value="The day I proposed">
+            <textarea aria-label="Proposal description" rows="3">I wanted to tell you what you meant to me. That little moment became part of our story. 🌙</textarea>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <span class="timeline-heart">💖</span>
+          <div class="timeline-card">
+            <p class="timeline-kicker">THE ANSWER</p>
+            <input class="timeline-date" aria-label="Acceptance date" value="06 APRIL 2026">
+            <input class="timeline-title" aria-label="Acceptance title" value="The day you said yes">
+            <textarea aria-label="Acceptance description" rows="3">Two days later, you accepted my feelings. That yes made 6 April a date I'll always remember. ❤️</textarea>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <span class="timeline-heart">🌙</span>
+          <div class="timeline-card">
+            <p class="timeline-kicker">OUR STORY CONTINUES</p>
+            <input class="timeline-date" aria-label="Relationship milestone" value="SIX MONTHS TOGETHER">
+            <input class="timeline-title" aria-label="Milestone title" value="Still writing our story">
+            <textarea aria-label="Milestone description" rows="3">Six months of memories, little moments, smiles, and learning about each other. There are still so many memories waiting for us. ✨</textarea>
+          </div>
+        </article>
+      </div>
+
+      <div class="scene-actions">
+        <button id="to-counter-btn" class="primary-button" type="button">
+          See how long we've been counting <span>♡</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- SCENE 5: LIVE COUNTERS (separate scene) -->
+    <section id="counter-scene" class="scene" hidden>
+      <div class="section-heading counters-heading">
+        <p class="eyebrow">TIME IS ONLY MAGIC WITH YOU</p>
+        <h2>Every second, <span>still counting</span></h2>
+        <p class="section-subtitle">These little numbers never stop moving, just like my love for you. ♡</p>
+      </div>
+
+      <div class="counters">
+        <!--
+          CHANGE A DATE OR TIME: edit data-start below.
+          Format: YYYY-MM-DDTHH:MM:SS  (24-hour clock)
+          Example: born 26 Oct 2007 at 5:10 AM  ->  2007-10-26T05:10:00
+          Example: born 26 Oct 2007 at 4:45 PM  ->  2007-10-26T16:45:00
+        -->
+        <article class="counter-card" data-start="2007-10-26T05:10:00">
+          <p class="counter-kicker">BORN TO SHINE</p>
+          <h3 class="counter-title">your Time on Earth <span>♡</span></h3>
+          <p class="counter-note">since 26 October 2007, 5:10 AM</p>
+          <div class="counter-grid"></div>
+          <div class="counter-sparkles" aria-hidden="true"></div>
+        </article>
+
+        <article class="counter-card" data-start="2025-09-19T10:00:00">
+          <p class="counter-kicker">WHERE IT ALL BEGAN</p>
+          <h3 class="counter-title">Since We First Met <span>♡</span></h3>
+          <p class="counter-note">since 19 September 2025, 10:00 AM</p>
+          <div class="counter-grid"></div>
+          <div class="counter-sparkles" aria-hidden="true"></div>
+        </article>
+
+        <article class="counter-card" data-start="2026-04-06T22:00:00">
+          <p class="counter-kicker">THE DAY YOU SAID YES</p>
+          <h3 class="counter-title">Our Time Together <span>♡</span></h3>
+          <p class="counter-note">since 6 April 2026, 10:00 PM</p>
+          <div class="counter-grid"></div>
+          <div class="counter-sparkles" aria-hidden="true"></div>
+        </article>
+      </div>
+
+      <div class="scene-actions">
+        <button id="to-finale-btn" class="primary-button" type="button">
+          One last little surprise <span>♡</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- SCENE 6: BIRTHDAY FINALE -->
+    <section id="finale-scene" class="scene" hidden>
+      <div class="finale-content">
+        <div class="finale-heart">♡</div>
+        <p class="eyebrow">TO MY FAVOURITE PERSON</p>
+
+        <h2>Six months of us,<br><span>a thousand little stars.</span></h2>
+
+        <p class="finale-copy">
+          From the first time I saw you on 19 September, to becoming
+          friends, holding your hand on that bus journey, and the day
+          you said yes — every memory has become a little part of my
+          favourite story. I'm grateful that our paths crossed.
+        </p>
+
+        <p class="finale-script">You're my favourite chapter. ♡</p>
+
+        <p class="finale-copy">
+          May your birthday bring you all the happiness you deserve.
+          Keep smiling, keep shining, and never forget how special you are. ✨
+        </p>
+
+        <button id="reveal-surprise-btn" class="primary-button" type="button">
+          Reveal your final surprise <span>✧</span>
+        </button>
+
+        <button id="replay-btn" class="primary-button secondary-button" type="button">
+          Experience the magic again <span>↻</span>
+        </button>
+      </div>
+
+      <div id="finale-sparkles" aria-hidden="true"></div>
+    </section>
+
+    <!-- SCENE 7: FINAL SECRET SURPRISE (romantic sky + matrix + particle love) -->
+    <section id="particle-surprise-scene" class="scene" hidden>
+      <div class="surprise-beauty" aria-hidden="true">
+        <div class="surprise-nebula"></div>
+        <div class="surprise-rays"></div>
+        <div id="surprise-bokeh"></div>
+        <div class="surprise-stars"></div>
+        <span class="shooting-star" style="--t:8%; --l:70%; --dl:1s"></span>
+        <span class="shooting-star" style="--t:22%; --l:45%; --dl:5s"></span>
+        <span class="shooting-star" style="--t:14%; --l:88%; --dl:9s"></span>
+        <div class="surprise-moon-glow"></div>
+        <div class="surprise-moon">🌙</div>
+        <div class="surprise-heartglow"></div>
+        <div id="surprise-petals"></div>
+        <div id="surprise-hearts"></div>
+      </div>
+
+      <p class="surprise-eyebrow">A LITTLE SECRET, JUST FOR YOU</p>
+
+      <canvas id="surprise-matrix-canvas" aria-hidden="true"></canvas>
+      <canvas id="surprise-heart-canvas" aria-hidden="true"></canvas>
+
+      <h2 id="surprise-message">I Love <span class="beat">❤</span> You <span class="kiddo">Kiddo</span></h2>
+
+      <button id="surprise-replay-btn" class="primary-button" type="button" hidden>
+        See the magic again <span>♡</span>
+      </button>
+
+      <button id="surprise-home-btn" class="text-button" type="button" hidden>
+        Experience everything again
+      </button>
+    </section>
+  </main>
+</body>
+</html>
